@@ -6,7 +6,6 @@ import Carousel, { Modal, ModalGateway } from 'react-images'
 
 const Gallery = () => {
   const breakpointColumnsObj = {
-    //responsive layout gallery
     default: 5,
     1100: 3,
     700: 2,
@@ -20,7 +19,7 @@ const Gallery = () => {
           nodes {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-              resize(height: 1000, jpegProgressive: true) {
+              resize(height: 1350) {
                 src
                 height
                 width
@@ -74,6 +73,7 @@ const Gallery = () => {
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
             <Carousel
+              loading="lazy"
               currentIndex={currentImg}
               views={data.allFile.nodes.map((x) => ({
                 src: x.childImageSharp.resize.src,

@@ -7,7 +7,13 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-gatsby-cloud',
     'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      option: {
+        failOnError: true,
+        useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
+      },
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
