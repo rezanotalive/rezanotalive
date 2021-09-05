@@ -20,9 +20,9 @@ const Gallery = () => {
           nodes {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-              original {
-                height
+              resize(height: 1000, jpegProgressive: true) {
                 src
+                height
                 width
               }
             }
@@ -74,9 +74,9 @@ const Gallery = () => {
             <Carousel
               currentIndex={currentImg}
               views={data.allFile.nodes.map((x) => ({
-                src: x.childImageSharp.original.src,
-                width: x.childImageSharp.original.width,
-                height: x.childImageSharp.original.height,
+                src: x.childImageSharp.resize.src,
+                width: x.childImageSharp.resize.width,
+                height: x.childImageSharp.resize.height,
               }))}
             />
           </Modal>
