@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import Masonry from 'react-masonry-css'
-import { GatsbyImage, getSrc } from 'gatsby-plugin-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 
 const Gallery = () => {
@@ -46,7 +46,7 @@ const Gallery = () => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto py-4">
+    <div className="container mx-auto py-4 sm:py-5 px-4 sm:px-5">
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
