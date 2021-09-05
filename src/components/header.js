@@ -61,26 +61,21 @@ export default function HeaderPage() {
             </button>
           </div>
         </div>
-        <div
-          className={
-            'mobile-menu max-w-full' + (openNavbar ? ' block pb-2' : ' hidden')
-          }
-        >
+        <div className={openNavbar ? ' block pb-2 mobile-menu' : ' hidden'}>
           <ul className="max-w-full m-auto">
-            <li className="active block text-sm px-2 py-4 text-white bg-blue-500 font-semibold">
-              <Link to="/">Home</Link>
-            </li>
             <li>
               <Link
-                to="#services"
-                className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                className="block text-sm px-2 py-4 hover:bg-green-500 font-semibold"
+                activeClassName="text-black bg-green"
+                to="/"
               >
-                Services
+                Home
               </Link>
             </li>
             <li>
               <Link
-                to="#about"
+                to="/about"
+                activeClassName="text-black bg-green"
                 className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
               >
                 About
@@ -88,10 +83,11 @@ export default function HeaderPage() {
             </li>
             <li>
               <Link
-                to="#contact"
+                to="/blog"
+                activeClassName="text-black bg-green"
                 className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
               >
-                Contact Us
+                blog
               </Link>
             </li>
           </ul>

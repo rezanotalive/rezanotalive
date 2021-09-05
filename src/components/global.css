@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.react-images__view {
-    @apply flex justify-center;
-}
+/* .react-images__view {
+    @apply flex justify-center mx-auto;
+} */
 
 .my-masonry-grid {
     display: -webkit-box;
