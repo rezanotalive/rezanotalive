@@ -34,7 +34,7 @@ const Gallery = () => {
   const [currentImg, setCurrentImg] = React.useState(0)
   const [viewerIsOpen, setViewerIsOpen] = React.useState(false)
 
-  const openLightbox = React.useCallback((index) => {
+  const openLightbox = React.useCallback(async (index) => {
     setCurrentImg(index)
     setViewerIsOpen(true)
   }, [])
@@ -56,7 +56,7 @@ const Gallery = () => {
             return (
               <div key={index} className="rounded-lg shadow-lg cursor-pointer">
                 <GatsbyImage
-                  onClick={() => {
+                  onClick={async () => {
                     openLightbox(index)
                   }}
                   className="rounded-lg cursor-pointer"
@@ -73,7 +73,6 @@ const Gallery = () => {
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
             <Carousel
-              loading="lazy"
               currentIndex={currentImg}
               views={data.allFile.nodes.map((x) => ({
                 src: x.childImageSharp.resize.src,

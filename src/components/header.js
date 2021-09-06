@@ -22,8 +22,8 @@ export default function HeaderPage() {
           <div className="flex space-x-7">
             <div className="hidden md:flex items-center space-x-1">
               <NavItems props="/" nameItem="Home" />
-              <NavItems props="/about" nameItem="About" />
-              <NavItems props="/blog" nameItem="Blog" />
+              {/* <NavItems props="/about" nameItem="About" />
+              <NavItems props="/blog" nameItem="Blog" /> */}
             </div>
           </div>
           <div className="md:hidden flex items-center">

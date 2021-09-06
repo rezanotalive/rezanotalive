@@ -14,7 +14,7 @@ const MobileHeader = ({ props }) => {
             Home
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             to="/about"
             activeClassName="text-black bg-green"
@@ -31,7 +31,7 @@ const MobileHeader = ({ props }) => {
           >
             blog
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   )
