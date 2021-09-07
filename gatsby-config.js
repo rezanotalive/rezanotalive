@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
+    siteUrl: 'https://rezanotalive.gatsbyjs.io',
     title: 'Rezanotalive',
+    image: './src/photos/icon.png',
   },
   plugins: [
     'gatsby-plugin-postcss',
