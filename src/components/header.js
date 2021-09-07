@@ -10,7 +10,7 @@ export default function HeaderPage() {
 
   return (
     <div className="bg-white shadow-lg sticky top-0 z-40">
-      <div className="max-w-2xl mx-auto px-4">
+      <div className="container max-w-2xl mx-auto px-4">
         <div className="flex justify-between">
           <div>
             <Link to="/" className="flex items-center py-4 px-0">

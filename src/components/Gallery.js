@@ -45,7 +45,7 @@ const Gallery = () => {
   }
 
   return (
-    <div className="container mx-auto py-4 sm:py-5 px-4 sm:px-5">
+    <div className="container mx-auto pt-4 pb-0 sm:pt-5 px-4 sm:px-5">
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
@@ -53,17 +53,15 @@ const Gallery = () => {
       >
         {data.allFile.nodes.map((item, index) => {
           return (
-            <div key={index} className="rounded-lg shadow-lg cursor-pointer">
-              <GatsbyImage
-                onClick={() => {
-                  openLightbox(index)
-                }}
-                className="rounded-lg cursor-pointer"
-                image={item.childImageSharp.gatsbyImageData}
-                alt=""
-                loading="lazy"
-              />
-            </div>
+            <GatsbyImage
+              onClick={() => {
+                openLightbox(index)
+              }}
+              className="rounded-lg cursor-pointer"
+              image={item.childImageSharp.gatsbyImageData}
+              alt=""
+              loading="lazy"
+            />
           )
         })}
       </Masonry>
