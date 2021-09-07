@@ -19,7 +19,7 @@ const Gallery = () => {
           nodes {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-              resize(height: 1350) {
+              resize(jpegProgressive: true, jpegQuality: 80, height: 1000) {
                 src
                 height
                 width
@@ -34,7 +34,7 @@ const Gallery = () => {
   const [currentImg, setCurrentImg] = React.useState(0)
   const [viewerIsOpen, setViewerIsOpen] = React.useState(false)
 
-  const openLightbox = React.useCallback(async (index) => {
+  const openLightbox = React.useCallback((index) => {
     setCurrentImg(index)
     setViewerIsOpen(true)
   }, [])
@@ -45,30 +45,28 @@ const Gallery = () => {
   }
 
   return (
-    <div>
-      <div className="container mx-auto py-4 sm:py-5 px-4 sm:px-5">
-        <Masonry
-          breakpointCols={breakpointColumnsObj}
-          className="my-masonry-grid"
-          columnClassName="my-masonry-grid_column"
-        >
-          {data.allFile.nodes.map((item, index) => {
-            return (
-              <div key={index} className="rounded-lg shadow-lg cursor-pointer">
-                <GatsbyImage
-                  onClick={async () => {
-                    openLightbox(index)
-                  }}
-                  className="rounded-lg cursor-pointer"
-                  image={item.childImageSharp.gatsbyImageData}
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            )
-          })}
-        </Masonry>
-      </div>
+    <div className="container mx-auto py-4 sm:py-5 px-4 sm:px-5">
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
+        {data.allFile.nodes.map((item, index) => {
+          return (
+            <div key={index} className="rounded-lg shadow-lg cursor-pointer">
+              <GatsbyImage
+                onClick={() => {
+                  openLightbox(index)
+                }}
+                className="rounded-lg cursor-pointer"
+                image={item.childImageSharp.gatsbyImageData}
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          )
+        })}
+      </Masonry>
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>

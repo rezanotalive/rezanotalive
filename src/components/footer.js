@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 const FooterPage = () => {
   return (
-    <div className="max-w-full bg-white p-3 m-2">
+    <div className="max-w-full bg-white pb-4 mb-4 mt-0">
       <div className="flex justify-center">
         <p className="text-gray-500">
           Created with 💖 by{' '}

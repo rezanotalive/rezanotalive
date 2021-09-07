@@ -4,7 +4,7 @@ import Gallery from '../components/Gallery'
 
 const FirstBaby = () => {
   return (
-    <Layout pageTitle="Home Page">
+    <Layout pageTitle="HomePage">
       <Gallery />
     </Layout>
   )
