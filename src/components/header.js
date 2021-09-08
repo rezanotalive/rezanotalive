@@ -1,9 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { useState } from 'react'
-import MobileHeader from './MobileHeader'
-import NavItems from './NavItems'
-import CloseButton from './CLoseButton'
+import { MobileHeader, NavItems, CloseButton } from './ComponentsNavbar'
 
 export default function HeaderPage() {
   const [openNavbar, setNavbar] = useState(0)

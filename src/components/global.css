@@ -2,27 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (min-width: 540px) {
-    .react-images__view {
-        display: flex;
-        justify-content: center;
-    }
-}
-
 .my-masonry-grid {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-left: -30px;
-    width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -30px;
+  width: auto;
 }
 
 .my-masonry-grid_column {
-    padding-left: 30px;
-    background-clip: padding-box;
+  padding-left: 30px;
+  background-clip: padding-box;
 }
 
-.my-masonry-grid_column>div {
-    background: grey;
-    margin-bottom: 30px;
+.my-masonry-grid_column > div {
+  background: grey;
+  margin-bottom: 30px;
 }

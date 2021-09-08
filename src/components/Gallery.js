@@ -75,6 +75,23 @@ const Gallery = () => {
                 width: x.childImageSharp.resize.width,
                 height: x.childImageSharp.resize.height,
               }))}
+              styles={{
+                container: (base) => ({
+                  ...base,
+                  height: '100vh',
+                }),
+                view: (base) => ({
+                  ...base,
+                  alignItems: 'center',
+                  display: 'flex ',
+                  height: '100vh',
+                  justifyContent: 'center',
+
+                  '& > img': {
+                    maxHeight: '100vh',
+                  },
+                }),
+              }}
             />
           </Modal>
         ) : null}
