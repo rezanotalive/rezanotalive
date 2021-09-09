@@ -14,7 +14,7 @@ export const MobileHeader = ({ props }) => {
             Home
           </Link>
         </li>
-        {/* <li>
+        <li>
           <Link
             to="/about"
             activeClassName="text-black bg-green"
@@ -23,7 +23,7 @@ export const MobileHeader = ({ props }) => {
             About
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             to="/blog"
             activeClassName="text-black bg-green"
