@@ -25,7 +25,7 @@ const aboutPages = () => {
           <p className="my-4">
             In my free time, I like to explore the city by bus.
           </p>
-          <p className="my-4">Hit me for 🤝 collaboration.</p>
+          <p className="my-4">Hit me up for 🤝 collaboration.</p>
         </div>
       </div>
     </Layout>
