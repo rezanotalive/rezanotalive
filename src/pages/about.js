@@ -18,8 +18,8 @@ const aboutPages = () => {
         <div className="text-2xl font-sans">
           <p className="my-4">👋 Hi there!</p>
           <p className="my-3">
-            I'm not a photographer and a programmer, based in Indonesia. I'm
-            just a man who loves to make some code and take pictures. I was also
+            I'm not a photographer and programmer, based in Indonesia. I'm just
+            a man who loves to make some code and take pictures. I was also
             enthusiastic about art, hiking, and music.
           </p>
           <p className="my-4">
