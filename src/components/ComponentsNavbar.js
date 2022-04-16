@@ -1,37 +1,26 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
+const tempMobile = (titleNav, toLink) => {
+  return (
+    <li>
+      <Link
+        className="block text-sm px-2 py-4 hover:bg-green-500 font-semibold"
+        activeClassName="text-black bg-green"
+        to={toLink}
+      >
+        {titleNav}
+      </Link>
+    </li>
+  )
+}
+
 export const MobileHeader = ({ props }) => {
   return (
     <div className={props}>
       <ul>
-        <li>
-          <Link
-            className="block text-sm px-2 py-4 hover:bg-green-500 font-semibold"
-            activeClassName="text-black bg-green"
-            to="/"
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/about"
-            activeClassName="text-black bg-green"
-            className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-          >
-            About
-          </Link>
-        </li>
-        {/* <li>
-          <Link
-            to="/blog"
-            activeClassName="text-black bg-green"
-            className="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-          >
-            blog
-          </Link>
-        </li> */}
+        {tempMobile('home', '/')}
+        {tempMobile('about', '/about')}
       </ul>
     </div>
   )

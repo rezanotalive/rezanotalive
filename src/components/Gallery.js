@@ -16,13 +16,15 @@ const Gallery = () => {
     graphql`
       query {
         allFile(filter: { sourceInstanceName: { eq: "images" } }) {
-          nodes {
-            childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
-              resize(jpegProgressive: true, jpegQuality: 80, height: 1000) {
-                src
-                height
-                width
+          edges {
+            node {
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+                resize(jpegQuality: 80, height: 1000, jpegProgressive: true) {
+                  src
+                  height
+                  width
+                }
               }
             }
           }
@@ -51,14 +53,14 @@ const Gallery = () => {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {data.allFile.nodes.map((item, index) => {
+        {data.allFile.edges.map((item, index) => {
           return (
             <GatsbyImage
               onClick={() => {
                 openLightbox(index)
               }}
               className="rounded-lg cursor-pointer"
-              image={item.childImageSharp.gatsbyImageData}
+              image={item.node.childImageSharp.gatsbyImageData}
               alt=""
               loading="lazy"
             />
@@ -70,10 +72,10 @@ const Gallery = () => {
           <Modal onClose={closeLightbox}>
             <Carousel
               currentIndex={currentImg}
-              views={data.allFile.nodes.map((x) => ({
-                src: x.childImageSharp.resize.src,
-                width: x.childImageSharp.resize.width,
-                height: x.childImageSharp.resize.height,
+              views={data.allFile.edges.map((x) => ({
+                src: x.node.childImageSharp.resize.src,
+                width: x.node.childImageSharp.resize.width,
+                height: x.node.childImageSharp.resize.height,
               }))}
               styles={{
                 container: (base) => ({
