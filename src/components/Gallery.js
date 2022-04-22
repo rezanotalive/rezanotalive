@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import MyGrid from './MyGrid'
 import Carousel, { ModalGateway, Modal } from 'react-images'
 
 const Gallery = () => {
@@ -40,23 +41,22 @@ const Gallery = () => {
 
   return (
     <div>
-      <div className="gallery">
+      <MyGrid>
         {data.allFile.edges.map((item, index) => {
           return (
-            <div className="pics shadow-lg">
-              <GatsbyImage
-                onClick={() => {
-                  openLightbox(index)
-                }}
-                className="rounded-xl"
-                image={item.node.childImageSharp.gatsbyImageData}
-                alt={'pics' + index}
-                loading="lazy"
-              />
-            </div>
+            <GatsbyImage
+              onClick={() => {
+                openLightbox(index)
+              }}
+              className="rounded-xl shadow-md cursor-pointer hover:opacity-80"
+              image={item.node.childImageSharp.gatsbyImageData}
+              alt={`picture` + index}
+              loading="lazy"
+              key={index}
+            />
           )
         })}
-      </div>
+      </MyGrid>
       <ModalGateway>
         {viewerIsOpen && (
           <Modal onClose={closeLightbox}>

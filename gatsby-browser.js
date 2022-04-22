@@ -1,1 +1,1 @@
-import './src/components/global.css'
+import './src/components/styles/global.css'

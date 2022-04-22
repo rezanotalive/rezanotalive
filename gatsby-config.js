@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://rezanotalive.gatsbyjs.io',
     title: 'Rezanotalive',
-    image: './src/photos/icon.png',
+    description: 'My fucking Portfolio',
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -20,7 +20,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: './src/images/',
+        path: `${__dirname}/src/images`,
       },
       __key: 'images',
     },
@@ -30,14 +30,6 @@ module.exports = {
         name: 'blog',
         path: `${__dirname}/blog`,
       },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'photos',
-        path: `./src/photos`,
-      },
-      __key: 'photos',
     },
   ],
 }
