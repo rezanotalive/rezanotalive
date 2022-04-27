@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { ModalGateway } from 'react-images'
 import MyGrid from './MyGrid'
 import MyModal from './MyModal'
 
@@ -57,7 +58,9 @@ const Gallery = () => {
           )
         })}
       </MyGrid>
-      {viewerIsOpen && <MyModal i={closeLightbox} u={currentImg} />}
+      <ModalGateway>
+        {viewerIsOpen && <MyModal i={closeLightbox} u={currentImg} />}
+      </ModalGateway>
     </div>
   )
 }

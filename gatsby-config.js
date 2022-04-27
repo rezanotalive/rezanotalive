@@ -32,15 +32,6 @@ module.exports = {
         path: `${__dirname}/blog`,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Rezanotalive`,
-        short_name: `Rezanotalive`,
-        start_url: `/`,
-        display: `standalone`,
-        icon: `/src/components/favicon/camera.png`,
-      },
-    },
+    
   ],
 }
