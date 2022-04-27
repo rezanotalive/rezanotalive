@@ -12,8 +12,18 @@ const Gallery = () => {
           edges {
             node {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-                resize(jpegQuality: 80, height: 1000, jpegProgressive: true) {
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                  jpgOptions: { progressive: true }
+                  formats: WEBP
+                )
+                resize(
+                  height: 1000
+                  jpegProgressive: true
+                  toFormat: WEBP
+                  webpQuality: 80
+                ) {
                   src
                   height
                   width
