@@ -3,6 +3,7 @@ module.exports = {
     siteUrl: 'https://rezanotalive.gatsbyjs.io',
     title: 'Rezanotalive',
     description: 'My fucking Portfolio',
+    favicon: `${__dirname}/src/components/favicon`,
   },
   plugins: [
     'gatsby-plugin-postcss',
@@ -29,6 +30,16 @@ module.exports = {
       options: {
         name: 'blog',
         path: `${__dirname}/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Rezanotalive`,
+        short_name: `Rezanotalive`,
+        start_url: `/`,
+        display: `standalone`,
+        icon: `/src/components/favicon/camera.png`,
       },
     },
   ],
