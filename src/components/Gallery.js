@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import Carousel, { ModalGateway, Modal } from 'react-images'
 import MyGrid from './MyGrid'
-import MyModal from './MyModal'
 
 const Gallery = () => {
   const data = useStaticQuery(
@@ -57,7 +57,37 @@ const Gallery = () => {
           )
         })}
       </MyGrid>
-      <MyModal props={viewerIsOpen} i={closeLightbox} u={currentImg} />
+      <ModalGateway>
+        {viewerIsOpen && (
+          <Modal onClose={closeLightbox}>
+            <Carousel
+              currentIndex={currentImg}
+              views={data.allFile.edges.map((x) => ({
+                src: x.node.childImageSharp.resize.src,
+                width: x.node.childImageSharp.resize.width,
+                height: x.node.childImageSharp.resize.height,
+              }))}
+              styles={{
+                container: (base) => ({
+                  ...base,
+                  height: '100vh',
+                }),
+                view: (base) => ({
+                  ...base,
+                  alignItems: 'center',
+                  display: 'flex ',
+                  height: '100vh',
+                  justifyContent: 'center',
+
+                  '& > img': {
+                    maxHeight: '100vh',
+                  },
+                }),
+              }}
+            />
+          </Modal>
+        )}
+      </ModalGateway>
     </div>
   )
 }
